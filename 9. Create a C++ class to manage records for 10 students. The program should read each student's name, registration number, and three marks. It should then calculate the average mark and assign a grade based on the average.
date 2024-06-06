@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+private:
+    string name;
+    int regNo;
+    int marks[3];
+    double average;
+    char grade;
+public:
+    void readData() {
+        cout << "Enter student name: ";
+        cin >> name;
+        cout << "Enter registration number: ";
+        cin >> regNo;
+        cout << "Enter three marks: ";
+        for (int i = 0; i < 3; i++) {
+            cin >> marks[i];
+        }
+    }
+
+    void calculateAverage() {
+        int sum = 0;
+        for (int i = 0; i < 3; i++) {
+            sum += marks[i];
+        }
+        average = (double)sum / 3;
+        assignGrade();
+    }
+    void assignGrade() {
+        if (average > 90) grade = 'S';
+        else if (average > 80) grade = 'A';
+        else if (average > 70) grade = 'B';
+        else if (average > 60) grade = 'C';
+        else if (average > 50) grade = 'D';
+        else grade = 'F';
+    }
+    void displayData() {
+        cout << "Name: " << name << endl;
+        cout << "Registration Number: " << regNo << endl;
+        cout << "Marks: ";
+        for (int i = 0; i < 3; i++) {
+            cout << marks[i] << " ";
+        }
+        cout << endl;
+        cout << "Average: " << average << endl;
+        cout << "Grade: " << grade << endl;
+        cout << endl;
+    }
+};
+
+int main() {
+    Student students[3];
+    for (int i = 0; i < 3; i++) {
+        cout << "Enter data for student " << (i + 1) << ":" << endl;
+        students[i].readData();
+        students[i].calculateAverage();
+    }
+    cout << "Student Records:" << endl;
+    for (int i = 0; i < 3; i++) {
+        students[i].displayData();
+    }
+    return 0;
+}
