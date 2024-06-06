@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int intValue = 10;
+    float floatValue = static_cast<float>(intValue); // Implicit conversion from int to float
+    cout << "Integer value: " << intValue << endl;
+    cout << "Float value: " << floatValue << endl;
+    return 0;
+}
