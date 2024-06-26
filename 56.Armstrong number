@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, sum = 0, temp, remainder, n = 0;
+    cout << "Enter a number: ";
+    cin >> num;
+    temp = num;
+    while (temp != 0) {
+        temp /= 10;
+        n++;
+    }
+    temp = num;
+    while (temp != 0) {
+        remainder = temp % 10;
+        sum += pow(remainder, n);
+        temp /= 10;
+    }
+    string result = (sum == num) ? "an Armstrong number" : "not an Armstrong number";
+    cout << "The number " << num << " is " << result << "." << endl;
+
+    return 0;
+}
