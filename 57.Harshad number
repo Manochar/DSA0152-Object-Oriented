@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int num, sum = 0, temp;
+    cout << "Enter a number: ";
+    cin >> num;
+    temp = num;
+    while (temp!= 0) {
+        sum += temp % 10;
+        temp /= 10;
+    }
+    string result = (num % sum == 0)? "a Harshad number" : "not a Harshad number";
+    cout << "The number " << num << " is " << result << "." << endl;
+
+    return 0;
+}
