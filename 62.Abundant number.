@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+bool isAbundantNumber(int n) {
+    int sum = 0;
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+    return sum > n;
+}
+
+int main() {
+    int num;
+
+    // Read in a number
+    cout << "Enter a number: ";
+    cin >> num;
+
+    // Check if the number is an Abundant number
+    string result = isAbundantNumber(num)? "an Abundant number" : "not an Abundant number";
+
+    // Display the result
+    cout << "The number " << num << " is " << result << "." << endl;
+
+    return 0;
+}
