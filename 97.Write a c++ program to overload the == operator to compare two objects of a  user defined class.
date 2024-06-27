@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class Person {
+private:
+    string name;
+    int age;
+public:
+    Person(string n, int a) {
+        name = n;
+        age = a;
+    }
+    bool operator==(const Person& p) const {
+        return (name == p.name && age == p.age);
+    }
+};
+int main() {
+    Person person1("John Doe", 30);
+    Person person2("John Doe", 30);
+    Person person3("Jane Doe", 25);
+    cout << "person1 == person2: " << (person1 == person2? "true" : "false") << endl;
+    cout << "person1 == person3: " << (person1 == person3? "true" : "false") << endl;
+
+    return 0;
+}
