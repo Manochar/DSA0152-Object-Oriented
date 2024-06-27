@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+bool isNeonNumber(int n) {
+    int square = n * n;
+    int sum = 0;
+    while (square != 0) {
+        sum += square % 10;
+        square /= 10;
+    }
+    return sum == n;
+}
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    string result = isNeonNumber(num)? "a Neon number" : "not a Neon number";
+    cout << "The number " << num << " is " << result << "." << endl;
+
+    return 0;
+}
