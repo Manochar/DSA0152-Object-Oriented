@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class Student {
+private:
+    string name;
+    int rollNumber;
+    float cgpa;
+
+public:
+    Student(string n, int r, float c) {
+        name = n;
+        rollNumber = r;
+        cgpa = c;
+        cout << "Student created: " << name << " with roll number " << rollNumber << " and CGPA " << cgpa << endl;
+    }
+    ~Student() {
+        cout << "Student destroyed: " << name << " with roll number " << rollNumber << " and CGPA " << cgpa << endl;
+    }
+    void displayStudentInfo() {
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << rollNumber << endl;
+        cout << "CGPA: " << cgpa << endl;
+    }
+};
+int main() {
+    Student myStudent("John Doe", 12345, 3.5);
+    myStudent.displayStudentInfo();
+
+    return 0;
+}
