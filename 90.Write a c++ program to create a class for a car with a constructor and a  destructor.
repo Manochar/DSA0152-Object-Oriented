@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class Car {
+private:
+    string brand;
+    string model;
+    int year;
+    int mileage;
+
+public:
+    Car(string b, string m, int y, int mi) {
+        brand = b;
+        model = m;
+        year = y;
+        mileage = mi;
+        cout << "Car created: " << brand << " " << model << " " << year << " with " << mileage << " miles." << endl;
+    }
+    ~Car() {
+        cout << "Car destroyed: " << brand << " " << model << " " << year << " with " << mileage << " miles." << endl;
+    }
+    void displayCarInfo() {
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+        cout << "Mileage: " << mileage << " miles" << endl;
+    void updateMileage(int newMileage) {
+        mileage = newMileage;
+        cout << "Mileage updated to " << mileage << " miles." << endl;
+    }
+};
+int main() {
+    Car myCar("Toyota", "Corolla", 2015, 50000);
+    myCar.displayCarInfo();
+    myCar.updateMileage(60000);
+    myCar.displayCarInfo();
+
+    return 0;
+}
