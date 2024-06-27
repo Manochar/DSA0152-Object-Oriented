@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void getStudentDetails(string &studentName, int &age, string &parentName, float &mark) {
+    cout << "Enter student's name: ";
+    getline(cin, studentName);
+    cout << "Enter student's age: ";
+    cin >> age;
+    cin.ignore(); 
+    cout << "Enter parent's name: ";
+    getline(cin, parentName);
+    cout << "Enter student's mark: ";
+    cin >> mark;
+}
+void displayStudentDetails(const string &studentName, int age, const string &parentName, float mark) {
+    cout << "\nStudent Details:\n";
+    cout << "Name: " << studentName << endl;
+    cout << "Age: " << age << endl;
+    cout << "Parent's Name: " << parentName << endl;
+    cout << "Mark: " << mark << endl;
+}
+int main() {
+    string studentName;
+    int age;
+    string parentName;
+    float mark;
+    getStudentDetails(studentName, age, parentName, mark);
+    displayStudentDetails(studentName, age, parentName, mark);
+
+    return 0;
+}
