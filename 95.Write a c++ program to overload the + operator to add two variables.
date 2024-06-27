@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class Number {
+private:
+    int value;
+public:
+    Number(int val = 0) {
+        value = val;
+    }
+    Number operator+(const Number& n) {
+        return Number(value + n.value);
+    }
+    void displayValue() {
+        cout << "Value: " << value << endl;
+    }
+};
+int main() {
+    Number n1(5);
+    Number n2(3);
+    cout << "n1: ";
+    n1.displayValue();
+    cout << "n2: ";
+    n2.displayValue();
+    Number n3 = n1 + n2;
+    cout << "n1 + n2: ";
+    n3.displayValue();
+
+    return 0;
+}
